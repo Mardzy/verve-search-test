@@ -13,17 +13,17 @@ class App extends React.Component {
   state = {
     information: [],
     selectedContent: ''
-
   }
+
   componentDidMount(){
-    //Allow-Control-Allow-Origin: * google extension
+
     Axios.get('http://localhost:8001/data.json')
       .then(res => this.setState({information: res.data}/*, console.log('information set in state', res.data)*/))
       .catch(err => console.log(err));
   }
 
   handleClick (content){
-    console.log('handleClick', content);
+    // console.log('handleClick', content);
     this.setState({
       selectedContent: content
     });
